@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7eee5">
+  <meta name="description" content="BookLoop — อ่านจบ ส่งต่อ สร้างวงจรการแบ่งปันหนังสือ">
+  <title>BookLoop — Pass the story on</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement"><span>✦</span> อ่านจบแล้ว อย่าปล่อยให้เรื่องราวจบลง <span class="announcement-link">ส่งต่อหนังสือกันเลย ↗</span></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="BookLoop หน้าแรก">
+      <span class="brand-mark">b<span>↻</span></span>
+      <span>bookloop<small>PASS THE STORY ON</small></span>
+    </a>
+    <nav class="main-nav" aria-label="เมนูหลัก">
+      <a href="#explore">ค้นหาหนังสือ</a>
+      <a href="#how">วิธีใช้งาน</a>
+      <a href="#impact">ผลกระทบ</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="savedShortcut" aria-label="หนังสือที่บันทึกไว้" title="รายการโปรด">♡ <span id="savedCount">0</span></button>
+      <button class="btn btn-dark btn-small" id="openAddTop">＋ ลงหนังสือ</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE LOOP, A BIG IMPACT</div>
+        <h1>หนังสือเล่มเดิม<br>อาจเป็น <span>โลกใบใหม่</span><i>✳</i></h1>
+        <p>ส่งต่อหนังสือที่อ่านจบ ให้ใครสักคนได้เริ่มเรื่องราวบทใหม่<br class="desktop-only"> จะให้ฟรี แลกเปลี่ยน หรือขายต่อก็ได้ในที่เดียว</p>
+        <div class="hero-actions">
+          <a href="#explore" class="btn btn-dark">ไปค้นหาหนังสือ <span>↗</span></a>
+          <button class="btn btn-light" id="openAddHero">＋ ส่งต่อหนังสือของฉัน</button>
+        </div>
+        <div class="hero-social-proof">
+          <div class="avatar-stack"><span>ม</span><span>น</span><span>♡</span></div>
+          <div><strong id="heroBookCount">12+</strong><small>หนังสือรอเจ้าของคนใหม่</small></div>
+          <span class="proof-divider"></span>
+          <div><strong>SDG 12</strong><small>ใช้ทรัพยากรให้คุ้มค่า</small></div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-sticker sticker-left">READ<br>REPEAT <span>↻</span></div>
+        <div class="sunburst"></div>
+        <div class="book-stack">
+          <div class="book book-back"><span>THE<br>ART OF<br>GROWING</span><i>✳</i></div>
+          <div class="book book-middle"><span>little<br>things<br>matter.</span><i>☼</i></div>
+          <div class="book book-front"><span>somewhere<br>between<br>the pages</span><i>♡</i></div>
+        </div>
+        <div class="hero-sticker sticker-right">ONE BOOK<br>ONE MORE LIFE <b>✦</b></div>
+        <div class="hero-note">good stories<br>never get old <span>↗</span></div>
+      </div>
+      <div class="hero-bottom-label">YOUR NEXT CHAPTER STARTS HERE <span>↓</span></div>
+    </section>
+
+    <section class="impact-strip" id="impact">
+      <div class="impact-intro"><span class="tiny-spark">✳</span><div><strong>Small action, softer footprint.</strong><small>ทุกเล่มที่ส่งต่อ คือโอกาสให้ทรัพยากรถูกใช้อย่างคุ้มค่า</small></div></div>
+      <div class="impact-stat"><strong id="statBooks">12</strong><span>เล่มในชุมชน <small>ตัวอย่าง + รายการของคุณ</small></span></div>
+      <div class="impact-stat"><strong id="statLoops">4</strong><span>ส่งต่อสำเร็จ <small>ข้อมูลตัวอย่าง</small></span></div>
+      <div class="impact-stat"><strong id="statSaved">8</strong><span>รายการที่บันทึก <small>ในอุปกรณ์นี้</small></span></div>
+    </section>
+
+    <section class="explore section-wrap" id="explore">
+      <div class="section-heading">
+        <div><div class="eyebrow">THE COMMUNITY BOOKSHELF</div><h2>เล่มไหน <span>เรียกชื่อเธออยู่?</span></h2><p>เลือกเรื่องราวบทต่อไปของคุณเลย</p></div>
+        <button class="text-link" id="showAll">ดูหนังสือทั้งหมด <span>↗</span></button>
+      </div>
+      <div class="toolbar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="ค้นหาชื่อหนังสือ ผู้เขียน หรือหมวดหมู่..." aria-label="ค้นหาหนังสือ"></label>
+        <div class="filter-tabs" role="group" aria-label="ประเภทหนังสือ">
+          <button class="filter-tab active" data-filter="all">ทั้งหมด <span id="countAll">12</span></button>
+          <button class="filter-tab" data-filter="free">ให้ฟรี</button>
+          <button class="filter-tab" data-filter="swap">แลกเปลี่ยน</button>
+          <button class="filter-tab" data-filter="sale">ขายมือสอง</button>
+          <button class="filter-tab" data-filter="saved">♡ ที่บันทึก</button>
+        </div>
+        <select id="categoryFilter" aria-label="เลือกหมวดหมู่">
+          <option value="all">ทุกหมวดหมู่</option><option>นิยาย</option><option>พัฒนาตัวเอง</option><option>ธุรกิจ</option><option>การเรียน</option><option>ศิลปะ</option>
+        </select>
+      </div>
+      <div class="results-line"><span id="resultsLabel">หนังสือที่น่าจะชอบ</span><span class="results-count" id="resultsCount">12 รายการ</span></div>
+      <div class="book-grid" id="bookGrid" aria-live="polite"></div>
+      <div class="empty-state hidden" id="emptyState"><div>📚</div><h3>ยังไม่เจอเล่มที่ตามหา</h3><p>ลองเปลี่ยนคำค้น หรือเป็นคนแรกที่ลงหนังสือเล่มนี้ก็ได้นะ</p><button class="btn btn-dark" id="emptyAdd">＋ ลงหนังสือ</button></div>
+    </section>
+
+    <section class="how-section" id="how">
+      <div class="how-inner">
+        <div class="how-heading"><div class="eyebrow">IT'S EASY AS 1, 2, LOOP</div><h2>ส่งต่อหนังสือ<br><span>ง่ายกว่าที่คิด</span></h2><p>พื้นที่เล็ก ๆ ที่ทำให้หนังสือได้เดินทางต่อ</p><button class="btn btn-dark" id="openAddHow">มาเริ่มส่งต่อกัน <span>↗</span></button></div>
+        <div class="steps">
+          <article class="step-card"><div class="step-number">01</div><div class="step-icon pink-icon">＋</div><h3>ลงเล่มที่อยากส่งต่อ</h3><p>ใส่ชื่อหนังสือ สภาพ และเลือกว่าจะให้ฟรี แลก หรือขายต่อ</p><span class="step-decoration">✳</span></article>
+          <article class="step-card step-card-offset"><div class="step-number">02</div><div class="step-icon yellow-icon">♡</div><h3>เจอเล่มที่ใช่</h3><p>ค้นหาหมวดหมู่ กดบันทึก หรือส่งคำขอรับหนังสือที่สนใจ</p><span class="step-decoration">↗</span></article>
+          <article class="step-card"><div class="step-number">03</div><div class="step-icon green-icon">↻</div><h3>นัดรับแล้วส่งต่อ</h3><p>ตกลงวิธีส่งมอบกันอย่างปลอดภัย แล้วอัปเดตสถานะในระบบ</p><span class="step-decoration">✦</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sdg-section">
+      <div class="sdg-badge">12</div>
+      <div class="sdg-copy"><div class="eyebrow">OUR PURPOSE · SDG 12</div><h2>ซื้อให้น้อยลง<br>ใช้ให้คุ้มค่ามากขึ้น <span>↗</span></h2><p>BookLoop สนับสนุนการบริโภคอย่างรับผิดชอบ ด้วยการส่งเสริมการใช้หนังสือซ้ำและแบ่งปันทรัพยากรที่ยังมีคุณค่า หนังสือหนึ่งเล่มจึงมีโอกาสสร้างประโยชน์ได้มากกว่าหนึ่งครั้ง</p></div>
+      <div class="sdg-doodle">KEEP<br>THE<br>STORY<br>GOING <span>♡</span></div>
+    </section>
+
+    <section class="design-thinking section-wrap">
+      <div class="section-heading"><div><div class="eyebrow">DESIGN THINKING PROCESS</div><h2>เริ่มจากคน <span>ก่อนโค้ด</span></h2><p>กระบวนการออกแบบที่ใช้พัฒนา BookLoop</p></div></div>
+      <div class="thinking-grid">
+        <article><span>01 / EMPATHIZE</span><div>👀</div><h3>เข้าใจผู้ใช้</h3><p>สอบถามนักศึกษาว่ามีหนังสือที่ไม่ใช้แล้วหรืออยากหาหนังสือราคาประหยัดหรือไม่</p></article>
+        <article><span>02 / DEFINE</span><div>🎯</div><h3>กำหนดปัญหา</h3><p>สรุปอุปสรรคในการส่งต่อ เช่น ไม่รู้จะลงประกาศที่ไหนหรือหาคนแลกได้ยาก</p></article>
+        <article><span>03 / IDEATE</span><div>💡</div><h3>ระดมไอเดีย</h3><p>ออกแบบพื้นที่กลางที่รวมการให้ฟรี แลกเปลี่ยน และขายหนังสือมือสอง</p></article>
+        <article><span>04 / PROTOTYPE</span><div>🧩</div><h3>สร้างต้นแบบ</h3><p>พัฒนาเว็บที่ค้นหา ลงประกาศ บันทึกรายการ และส่งคำขอได้</p></article>
+        <article><span>05 / TEST</span><div>🗣️</div><h3>ทดลองและปรับปรุง</h3><p>ให้เพื่อนทดลองใช้งาน แล้วเก็บข้อเสนอแนะเพื่อปรับปรุงเว็บ</p></article>
+      </div>
+      <p class="research-note">หมายเหตุ: ขั้น Empathize และ Test ควรเก็บข้อมูลจากผู้ใช้จริงก่อนนำผลไปสรุปในรายงาน</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">b<span>↻</span></span><span>bookloop<small>PASS THE STORY ON</small></span></a><p>Read it. Share it. Loop it. <span>♡</span></p><small>Student project prototype · SDG 12</small></footer>
+
+  <div class="modal-backdrop hidden" id="addModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <button class="modal-close" id="closeAdd" aria-label="ปิด">×</button>
+      <div class="eyebrow">GIVE YOUR BOOK A NEW CHAPTER</div><h2 id="modalTitle">ส่งต่อหนังสือ <span>กันเถอะ</span></h2><p class="modal-subtitle">กรอกข้อมูลสั้น ๆ ให้คนที่กำลังตามหาได้เจอเล่มนี้</p>
+      <form id="bookForm"> 
+        <label>ชื่อหนังสือ *<input name="title" required maxlength="90" placeholder="เช่น Atomic Habits"></label>
+        <div class="form-row"><label>ผู้เขียน<input name="author" maxlength="70" placeholder="ชื่อผู้เขียน"></label><label>หมวดหมู่<select name="category"><option>นิยาย</option><option>พัฒนาตัวเอง</option><option>ธุรกิจ</option><option>การเรียน</option><option>ศิลปะ</option><option>อื่น ๆ</option></select></label></div>
+        <div class="form-row"><label>สภาพหนังสือ<select name="condition"><option>ดีมาก</option><option>ดี</option><option>มีร่องรอยการใช้งาน</option></select></label><label>รูปหน้าปก (URL)<input name="image" type="url" placeholder="https://..."></label></div>
+        <label>อยากส่งต่อแบบไหน? *</label>
+        <div class="mode-options">
+          <label class="mode-option"><input type="radio" name="mode" value="free" checked><span>🎁<b>ให้ฟรี</b><small>ส่งต่อให้คนอื่น</small></span></label>
+          <label class="mode-option"><input type="radio" name="mode" value="swap"><span>🔄<b>แลกเปลี่ยน</b><small>แลกกับเล่มที่สนใจ</small></span></label>
+          <label class="mode-option"><input type="radio" name="mode" value="sale"><span>🪙<b>ขายมือสอง</b><small>ตั้งราคาย่อมเยา</small></span></label>
+        </div>
+        <label id="priceLabel" class="hidden">ราคาที่ต้องการ (บาท)<input name="price" type="number" min="1" max="100000" placeholder="เช่น 80"></label>
+        <label>รายละเอียดเพิ่มเติม<textarea name="description" rows="3" maxlength="250" placeholder="ตำหนิของหนังสือ วิธีรับ หรือรายละเอียดอื่น ๆ"></textarea></label>
+        <button type="submit" class="btn btn-dark submit-btn">ลงประกาศหนังสือ <span>↗</span></button>
+        <p class="form-footnote">ต้นแบบนี้บันทึกข้อมูลไว้ในเบราว์เซอร์เครื่องนี้เท่านั้น</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <div class="modal detail-modal"><button class="modal-close" id="closeDetail" aria-label="ปิด">×</button><div id="detailContent"></div></div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
